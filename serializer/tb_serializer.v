@@ -22,7 +22,7 @@ module tb_serializer();
         #10; write = 0; data = 0;
         #10; enable = 1;
         #30; enable = 0;
-        #20; write = 1; enable = 1; data = 8'b00110101;
+        #20; write = 1; enable = 1; data = 8'b10110101;
         #10; write = 0; data = 0;
         #100; $finish;
     end
