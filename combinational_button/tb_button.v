@@ -23,20 +23,15 @@ module tb_button;
         $dumpfile("tb_button.vcd");
         $dumpvars(0, tb_button);
 
-        // Test all cases
-        // No buttons pressed
         button0 = 1; button1 = 1; button2 = 1; #5;
 
-        // Only one button pressed
         button0 = 0; button1 = 1; button2 = 1; #5;
         button0 = 1; button1 = 0; button2 = 1; #5;
         button0 = 1; button1 = 1; button2 = 0; #5;
 
-        // Two buttons pressed
         button0 = 0; button1 = 1; button2 = 0; #5; // LED0 should be on
         button0 = 1; button1 = 0; button2 = 0; #5; // LED1 should be on
 
-        // All buttons pressed
         button0 = 0; button1 = 0; button2 = 0; #5; // LED2 should be on
 
         $finish;
