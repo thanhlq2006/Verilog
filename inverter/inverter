@@ -1,0 +1,50 @@
+#! /Users/thithutuyettran/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20251012-54-g6651df6f2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x103260670 .scope module, "tb_inverter" "tb_inverter" 2 12;
+ .timescale -9 -12;
+v0x1032664a0_0 .var "tb_in", 0 0;
+v0x103266540_0 .net "tb_out", 0 0, L_0x103263890;  1 drivers
+S_0x1032607f0 .scope module, "DUT" "inverter" 2 31, 3 2 0, S_0x103260670;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x103263890 .functor NOT 1, v0x1032664a0_0, C4<0>, C4<0>, C4<0>;
+v0x1032635b0_0 .net "in", 0 0, v0x1032664a0_0;  1 drivers
+v0x103263790_0 .net "out", 0 0, L_0x103263890;  alias, 1 drivers
+    .scope S_0x103260670;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1032664a0_0, 0, 1;
+    %vpi_call 2 19 "$monitor", "%g\011 reset:%b enable:%b", $time, v0x1032664a0_0, v0x103266540_0 {0 0 0};
+    %vpi_call 2 20 "$dumpfile", "tb_inverter.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x103260670 {0 0 0};
+    %vpi_call 2 22 "$display", "time\011 in out" {0 0 0};
+    %delay 2000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1032664a0_0, 0, 1;
+    %delay 2000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1032664a0_0, 0, 1;
+    %delay 2000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1032664a0_0, 0, 1;
+    %delay 2000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1032664a0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 28 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_inverter.v";
+    "inverter.v";

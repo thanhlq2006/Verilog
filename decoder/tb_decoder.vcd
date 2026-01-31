@@ -1,0 +1,68 @@
+$date
+	Sat Jan 31 02:35:50 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_decoder $end
+$var wire 5 ! select [4:0] $end
+$var wire 1 " error $end
+$var parameter 32 # num $end
+$var reg 3 $ address [2:0] $end
+$scope module DUT $end
+$var wire 3 % in_address [2:0] $end
+$var wire 5 & out_select [4:0] $end
+$var wire 1 " out_error $end
+$var parameter 32 ' NUM_OUTPUT $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b101 '
+b101 #
+$end
+#0
+$dumpvars
+b1 &
+b0 %
+b0 $
+0"
+b1 !
+$end
+#5
+b10 !
+b10 &
+b1 $
+b1 %
+#10
+b100 !
+b100 &
+b10 $
+b10 %
+#15
+b1000 !
+b1000 &
+b11 $
+b11 %
+#20
+b10000 !
+b10000 &
+b100 $
+b100 %
+#25
+b0 !
+b0 &
+1"
+b101 $
+b101 %
+#30
+b110 $
+b110 %
+#35
+b111 $
+b111 %
+#40

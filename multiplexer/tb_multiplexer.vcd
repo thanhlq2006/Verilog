@@ -1,0 +1,65 @@
+$date
+	Fri Jan 30 14:56:16 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_multiplexer $end
+$var wire 1 ! O $end
+$var reg 1 " I0 $end
+$var reg 1 # I1 $end
+$var reg 1 $ I2 $end
+$var reg 1 % I3 $end
+$var reg 2 & S [1:0] $end
+$scope module DUT $end
+$var wire 1 " I0 $end
+$var wire 1 # I1 $end
+$var wire 1 $ I2 $end
+$var wire 1 % I3 $end
+$var wire 1 ! O $end
+$var wire 2 ' S [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#3
+1!
+1"
+#6
+0!
+1#
+0"
+#9
+1!
+b1 &
+b1 '
+#12
+0!
+b10 &
+b10 '
+#14
+1!
+1$
+#15
+0!
+b11 &
+b11 '
+#16
+1!
+1%
+#21

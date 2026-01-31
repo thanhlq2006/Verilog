@@ -1,0 +1,122 @@
+#! /Users/thithutuyettran/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20251012-54-g6651df6f2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x1058db310 .scope module, "tb_button" "tb_button" 2 3;
+ .timescale -9 -12;
+v0x942c38640_0 .net "LED0", 0 0, L_0x942c0c310;  1 drivers
+v0x942c386e0_0 .net "LED1", 0 0, L_0x942c0c540;  1 drivers
+v0x942c38780_0 .net "LED2", 0 0, L_0x942c0c7e0;  1 drivers
+v0x942c38820_0 .var "button0", 0 0;
+v0x942c388c0_0 .var "button1", 0 0;
+v0x942c38960_0 .var "button2", 0 0;
+S_0x1058db490 .scope module, "DUT" "button" 2 13, 3 2 0, S_0x1058db310;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "button0";
+    .port_info 1 /INPUT 1 "button1";
+    .port_info 2 /INPUT 1 "button2";
+    .port_info 3 /OUTPUT 1 "LED0";
+    .port_info 4 /OUTPUT 1 "LED1";
+    .port_info 5 /OUTPUT 1 "LED2";
+L_0x942c0c150 .functor NOT 1, v0x942c38820_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c1c0 .functor NOT 1, v0x942c38960_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c230 .functor AND 1, L_0x942c0c150, L_0x942c0c1c0, C4<1>, C4<1>;
+L_0x942c0c2a0 .functor AND 1, L_0x942c0c230, v0x942c388c0_0, C4<1>, C4<1>;
+L_0x942c0c310 .functor NOT 1, L_0x942c0c2a0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c380 .functor NOT 1, v0x942c388c0_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c3f0 .functor NOT 1, v0x942c38960_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c460 .functor AND 1, L_0x942c0c380, L_0x942c0c3f0, C4<1>, C4<1>;
+L_0x942c0c4d0 .functor AND 1, L_0x942c0c460, v0x942c38820_0, C4<1>, C4<1>;
+L_0x942c0c540 .functor NOT 1, L_0x942c0c4d0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c5b0 .functor NOT 1, v0x942c38820_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c620 .functor NOT 1, v0x942c388c0_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c690 .functor AND 1, L_0x942c0c5b0, L_0x942c0c620, C4<1>, C4<1>;
+L_0x942c0c700 .functor NOT 1, v0x942c38960_0, C4<0>, C4<0>, C4<0>;
+L_0x942c0c770 .functor AND 1, L_0x942c0c690, L_0x942c0c700, C4<1>, C4<1>;
+L_0x942c0c7e0 .functor NOT 1, L_0x942c0c770, C4<0>, C4<0>, C4<0>;
+v0x1058d8160_0 .net "LED0", 0 0, L_0x942c0c310;  alias, 1 drivers
+v0x1058e08b0_0 .net "LED1", 0 0, L_0x942c0c540;  alias, 1 drivers
+v0x1058e0960_0 .net "LED2", 0 0, L_0x942c0c7e0;  alias, 1 drivers
+v0x1058e0a20_0 .net *"_ivl_0", 0 0, L_0x942c0c150;  1 drivers
+v0x1058e0ac0_0 .net *"_ivl_10", 0 0, L_0x942c0c380;  1 drivers
+v0x1058e0ba0_0 .net *"_ivl_12", 0 0, L_0x942c0c3f0;  1 drivers
+v0x1058e0c40_0 .net *"_ivl_14", 0 0, L_0x942c0c460;  1 drivers
+v0x1058e0ce0_0 .net *"_ivl_16", 0 0, L_0x942c0c4d0;  1 drivers
+v0x1058e0d80_0 .net *"_ivl_2", 0 0, L_0x942c0c1c0;  1 drivers
+v0x942c38000_0 .net *"_ivl_20", 0 0, L_0x942c0c5b0;  1 drivers
+v0x942c380a0_0 .net *"_ivl_22", 0 0, L_0x942c0c620;  1 drivers
+v0x942c38140_0 .net *"_ivl_24", 0 0, L_0x942c0c690;  1 drivers
+v0x942c381e0_0 .net *"_ivl_26", 0 0, L_0x942c0c700;  1 drivers
+v0x942c38280_0 .net *"_ivl_28", 0 0, L_0x942c0c770;  1 drivers
+v0x942c38320_0 .net *"_ivl_4", 0 0, L_0x942c0c230;  1 drivers
+v0x942c383c0_0 .net *"_ivl_6", 0 0, L_0x942c0c2a0;  1 drivers
+v0x942c38460_0 .net "button0", 0 0, v0x942c38820_0;  1 drivers
+v0x942c38500_0 .net "button1", 0 0, v0x942c388c0_0;  1 drivers
+v0x942c385a0_0 .net "button2", 0 0, v0x942c38960_0;  1 drivers
+    .scope S_0x1058db310;
+T_0 ;
+    %vpi_call 2 23 "$dumpfile", "tb_button.vcd" {0 0 0};
+    %vpi_call 2 24 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1058db310 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38820_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c388c0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x942c38960_0, 0, 1;
+    %delay 5000, 0;
+    %vpi_call 2 42 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_button.v";
+    "button.v";
