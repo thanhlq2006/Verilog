@@ -1,0 +1,138 @@
+#! /Users/thithutuyettran/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20251012-54-g6651df6f2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/Users/thithutuyettran/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x10117a690 .scope module, "tb_edge_counter" "tb_edge_counter" 2 1;
+ .timescale 0 0;
+v0xa3ac80320_0 .var "clock", 0 0;
+v0xa3ac803c0_0 .net "count", 7 0, v0x1011815f0_0;  1 drivers
+v0xa3ac80460_0 .net "pulse", 0 0, L_0x101185ae0;  1 drivers
+v0xa3ac80500_0 .var "reset", 0 0;
+v0xa3ac805a0_0 .var "signal", 0 0;
+S_0x10117a810 .scope module, "DUT" "edge_counter" 2 10, 3 32 0, S_0x10117a690;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_clock";
+    .port_info 1 /INPUT 1 "in_reset";
+    .port_info 2 /INPUT 1 "in_signal";
+    .port_info 3 /OUTPUT 1 "out_pulse";
+    .port_info 4 /OUTPUT 8 "out_count";
+v0xa3ac80000_0 .net "in_clock", 0 0, v0xa3ac80320_0;  1 drivers
+v0xa3ac800a0_0 .net "in_reset", 0 0, v0xa3ac80500_0;  1 drivers
+v0xa3ac80140_0 .net "in_signal", 0 0, v0xa3ac805a0_0;  1 drivers
+v0xa3ac801e0_0 .net "out_count", 7 0, v0x1011815f0_0;  alias, 1 drivers
+v0xa3ac80280_0 .net "out_pulse", 0 0, L_0x101185ae0;  alias, 1 drivers
+S_0x10117f4f0 .scope module, "count" "counter" 3 46, 3 16 0, S_0x10117a810;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_clock";
+    .port_info 1 /INPUT 1 "in_reset";
+    .port_info 2 /INPUT 1 "in_enable";
+    .port_info 3 /OUTPUT 8 "out_value";
+v0x10117f670_0 .net "in_clock", 0 0, v0xa3ac80320_0;  alias, 1 drivers
+v0x101181490_0 .net "in_enable", 0 0, L_0x101185ae0;  alias, 1 drivers
+v0x101181530_0 .net "in_reset", 0 0, v0xa3ac80500_0;  alias, 1 drivers
+v0x1011815f0_0 .var "out_value", 7 0;
+E_0x101184370 .event posedge, v0x10117f670_0;
+S_0x101180230 .scope module, "detector" "edge_detector" 3 40, 3 1 0, S_0x10117a810;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in_clock";
+    .port_info 1 /INPUT 1 "in_signal";
+    .port_info 2 /OUTPUT 1 "out_strobe";
+L_0x101185a70 .functor NOT 1, v0x101185950_0, C4<0>, C4<0>, C4<0>;
+L_0x101185ae0 .functor AND 1, L_0x101185a70, v0xa3ac805a0_0, C4<1>, C4<1>;
+v0x1011803b0_0 .net *"_ivl_0", 0 0, L_0x101185a70;  1 drivers
+v0x101180450_0 .net "in_clock", 0 0, v0xa3ac80320_0;  alias, 1 drivers
+v0x101185810_0 .net "in_signal", 0 0, v0xa3ac805a0_0;  alias, 1 drivers
+v0x1011858b0_0 .net "out_strobe", 0 0, L_0x101185ae0;  alias, 1 drivers
+v0x101185950_0 .var "past", 0 0;
+    .scope S_0x101180230;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x101185950_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x101180230;
+T_1 ;
+    %wait E_0x101184370;
+    %load/vec4 v0x101185810_0;
+    %assign/vec4 v0x101185950_0, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x10117f4f0;
+T_2 ;
+    %wait E_0x101184370;
+    %load/vec4 v0x101181530_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 8;
+    %assign/vec4 v0x1011815f0_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0x101181490_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.2, 8;
+    %load/vec4 v0x1011815f0_0;
+    %addi 1, 0, 8;
+    %assign/vec4 v0x1011815f0_0, 0;
+T_2.2 ;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x10117a690;
+T_3 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac80320_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac80500_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0x10117a690;
+T_4 ;
+    %delay 5, 0;
+    %load/vec4 v0xa3ac80320_0;
+    %inv;
+    %assign/vec4 v0xa3ac80320_0, 0;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_0x10117a690;
+T_5 ;
+    %vpi_call 2 19 "$dumpfile", "tb_edge_counter.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x10117a690 {0 0 0};
+    %delay 11, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xa3ac80500_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac805a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xa3ac80500_0, 0, 1;
+    %delay 30, 0;
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_5;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_edge_counter.v";
+    "edge_counter.v";
