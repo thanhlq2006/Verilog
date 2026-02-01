@@ -1,0 +1,450 @@
+$date
+	Sun Feb  1 22:38:59 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_fifo $end
+$var wire 1 ! out_full $end
+$var wire 1 " out_empty $end
+$var wire 8 # out_data [7:0] $end
+$var parameter 32 $ DATA_WIDTH $end
+$var parameter 36 % DEPTH $end
+$var parameter 32 & FIFO_ASIZE $end
+$var reg 1 ' in_clock $end
+$var reg 8 ( in_data [7:0] $end
+$var reg 1 ) in_put $end
+$var reg 1 * in_reset $end
+$var reg 1 + in_take $end
+$var integer 32 , i [31:0] $end
+$scope module DUT $end
+$var wire 1 ' in_clock $end
+$var wire 8 - in_data [7:0] $end
+$var wire 1 ) in_put $end
+$var wire 1 * in_reset $end
+$var wire 1 + in_take $end
+$var wire 8 . out_data [7:0] $end
+$var wire 4 / write_address [3:0] $end
+$var wire 4 0 read_address [3:0] $end
+$var wire 1 ! out_full $end
+$var wire 1 " out_empty $end
+$var parameter 32 1 DATA_WIDTH $end
+$var parameter 32 2 FIFO_ASIZE $end
+$var reg 8 3 data [7:0] $end
+$scope module controller $end
+$var wire 1 ' in_clock $end
+$var wire 1 ) in_put $end
+$var wire 1 * in_reset $end
+$var wire 1 + in_take $end
+$var wire 1 ! out_full $end
+$var wire 4 4 out_write_pointer [3:0] $end
+$var wire 4 5 out_read_pointer [3:0] $end
+$var wire 1 " out_empty $end
+$var parameter 32 6 FIFO_ASIZE $end
+$var reg 5 7 read_pointer [4:0] $end
+$var reg 5 8 write_pointer [4:0] $end
+$upscope $end
+$upscope $end
+$scope task step $end
+$var reg 8 9 data [7:0] $end
+$var reg 1 : put $end
+$var reg 1 ; take $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 6
+b100 2
+b1000 1
+b100 &
+b10000 %
+b1000 $
+$end
+#0
+$dumpvars
+0;
+0:
+b0 9
+bx 8
+bx 7
+bx 5
+bx 4
+bx 3
+bx 0
+bx /
+bx .
+b0 -
+bx ,
+0+
+1*
+0)
+b0 (
+0'
+bx #
+x"
+x!
+$end
+#5
+0!
+b0 /
+b0 4
+b0 0
+b0 5
+1"
+b0 8
+b0 7
+b0 #
+b0 .
+b0 3
+1'
+#10
+0'
+0*
+#15
+1'
+#20
+0'
+b10101010 (
+b10101010 -
+1)
+b10101010 9
+1:
+#25
+b1 /
+b1 4
+0"
+b1 8
+1'
+#30
+0'
+b0 (
+b0 -
+0)
+b0 9
+0:
+#35
+1'
+#40
+0'
+1+
+1;
+#45
+b1 0
+b1 5
+1"
+b1 7
+b10101010 #
+b10101010 .
+b10101010 3
+1'
+#50
+0'
+0+
+0;
+#55
+1'
+#60
+0'
+1)
+1:
+b0 ,
+#65
+b10 /
+b10 4
+0"
+b10 8
+1'
+#70
+0'
+b1 (
+b1 -
+b1 9
+b1 ,
+#75
+b11 /
+b11 4
+b11 8
+1'
+#80
+0'
+b10 (
+b10 -
+b10 9
+b10 ,
+#85
+b100 /
+b100 4
+b100 8
+1'
+#90
+0'
+b11 (
+b11 -
+b11 9
+b11 ,
+#95
+b101 /
+b101 4
+b101 8
+1'
+#100
+0'
+b100 (
+b100 -
+b100 9
+b100 ,
+#105
+b110 /
+b110 4
+b110 8
+1'
+#110
+0'
+b101 (
+b101 -
+b101 9
+b101 ,
+#115
+b111 /
+b111 4
+b111 8
+1'
+#120
+0'
+b110 (
+b110 -
+b110 9
+b110 ,
+#125
+b1000 /
+b1000 4
+b1000 8
+1'
+#130
+0'
+b111 (
+b111 -
+b111 9
+b111 ,
+#135
+b1001 /
+b1001 4
+b1001 8
+1'
+#140
+0'
+b1000 (
+b1000 -
+b1000 9
+b1000 ,
+#145
+b1010 /
+b1010 4
+b1010 8
+1'
+#150
+0'
+b1001 (
+b1001 -
+b1001 9
+b1001 ,
+#155
+b1011 /
+b1011 4
+b1011 8
+1'
+#160
+0'
+b1010 (
+b1010 -
+b1010 9
+b1010 ,
+#165
+b1100 /
+b1100 4
+b1100 8
+1'
+#170
+0'
+b1011 (
+b1011 -
+b1011 9
+b1011 ,
+#175
+b1101 /
+b1101 4
+b1101 8
+1'
+#180
+0'
+b1100 (
+b1100 -
+b1100 9
+b1100 ,
+#185
+b1110 /
+b1110 4
+b1110 8
+1'
+#190
+0'
+b1101 (
+b1101 -
+b1101 9
+b1101 ,
+#195
+b1111 /
+b1111 4
+b1111 8
+1'
+#200
+0'
+b1110 (
+b1110 -
+b1110 9
+b1110 ,
+#205
+b0 /
+b0 4
+b10000 8
+1'
+#210
+0'
+b1111 (
+b1111 -
+b1111 9
+b1111 ,
+#215
+1!
+b1 /
+b1 4
+b10001 8
+1'
+#220
+0'
+b0 (
+b0 -
+0)
+b0 9
+0:
+b10000 ,
+#225
+1'
+#230
+0'
+b11111111 (
+b11111111 -
+1)
+b11111111 9
+1:
+#235
+1'
+#240
+0'
+b0 (
+b0 -
+0)
+b0 9
+0:
+#245
+1'
+#250
+0'
+1+
+1;
+b0 ,
+#255
+0!
+b10 0
+b10 5
+b0 #
+b0 .
+b0 3
+b10 7
+1'
+#260
+0'
+b1 ,
+#265
+b11 0
+b11 5
+b11 7
+b1 #
+b1 .
+b1 3
+1'
+#270
+0'
+b10 ,
+#275
+b100 0
+b100 5
+b10 #
+b10 .
+b10 3
+b100 7
+1'
+#280
+0'
+0+
+0;
+b11 ,
+#285
+1'
+#290
+0'
+b1010101 (
+b1010101 -
+1+
+1)
+b1010101 9
+1;
+1:
+#295
+b10 /
+b10 4
+b101 0
+b101 5
+b11 #
+b11 .
+b11 3
+b10010 8
+b101 7
+1'
+#300
+0'
+b0 (
+b0 -
+0+
+0)
+b0 9
+0;
+0:
+#305
+1'
+#310
+0'
+#315
+1'
+#320
+0'
+#325
+1'
+#330
+0'
+#335
+1'
+#340
+0'
+#345
+1'
+#350
+0'
+#355
+1'
+#360
+0'
