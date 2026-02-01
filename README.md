@@ -1,1 +1,1 @@
-Content aligned with assignments of the course FPGA for Communication Systems
+Content aligned with assignments from online courses
