@@ -1,0 +1,93 @@
+$date
+	Sat Jan 31 11:39:35 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_deserializer $end
+$var wire 8 ! data [7:0] $end
+$var reg 1 " bit $end
+$var reg 1 # clock $end
+$var reg 1 $ enable $end
+$scope module DUT $end
+$var wire 1 " in_bit $end
+$var wire 1 # in_clock $end
+$var wire 1 $ in_enable $end
+$var wire 8 % out_data [7:0] $end
+$var reg 8 & internal [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b0 %
+0$
+1#
+0"
+b0 !
+$end
+#2
+1"
+1$
+#5
+0#
+#10
+b1 !
+b1 %
+b1 &
+1#
+#12
+0"
+#15
+0#
+#17
+0$
+#20
+1#
+#25
+0#
+#27
+1"
+#30
+1#
+#35
+0#
+#37
+1$
+#40
+b11 !
+b11 %
+b11 &
+1#
+#45
+0#
+#47
+0"
+#50
+b110 !
+b110 %
+b110 &
+1#
+#55
+0#
+#60
+b1100 !
+b1100 %
+b1100 &
+1#
+#65
+0#
+#67
+0$
+#70
+1#
+#75
+0#
+#77
